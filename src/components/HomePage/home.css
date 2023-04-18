@@ -1,0 +1,27 @@
+.navbar{
+    background-color: rgb(70, 70, 83);
+    width: 20vw;
+    height: 100vh;
+    /* height: 100%; */
+    /* display: flex; */
+    /* flex: 1; */
+    display: block;
+}
+li{
+    align-items: center;
+    display:flex;
+    color: aliceblue;
+    padding-top: 10%;
+    color: azure;
+    text-align: center;
+}
+li:hover {
+    background-color: rgb(132, 212, 232);
+    width: 100wh;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
