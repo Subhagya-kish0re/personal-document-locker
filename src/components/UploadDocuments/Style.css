@@ -3,7 +3,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 .uploadform{
 display: flex;
@@ -66,4 +66,34 @@ border-radius: 5px;
     text-align: center;
     border: 1px solid #999;
     font-size: 20px;
+}
+.btn-permission {
+    margin-left: 15vw;
+    margin-top: 0vh;
+}
+.center{
+    margin-top: 4vh;
+    text-align: center;
+}
+.homewidth{
+    /* max-width: 100vh; */
+    /* min-width: 100vh; */
+    width: 100%;
+    height: 30vw;
+}
+.btn-grant{
+    margin-top: 5vh;
+}
+.btn-revoke{
+    margin-top: 5vh;
+}
+.revoke{
+    padding-top: 5vh;
+}
+.headin-upload{
+    margin-left: 30px;
+    margin-top: 15%;
+}
+.upload-box{
+    margin-top: 10%;
 }

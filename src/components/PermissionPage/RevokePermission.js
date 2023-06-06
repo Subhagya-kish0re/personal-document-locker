@@ -3,11 +3,14 @@ import '../PermissionPage/style.css';
 import { useState } from 'react';
 import Popup from './Popup';
 import Popupcontent from './Popupcontent';
+import ModalDialog from 'react-bootstrap/ModalDialog'
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import DocumentsShow from './DocumentsShow';
+import Navbar from '../Registration Page/Navbar';
+import SideBar from '../HomePage/SideBar';
  const ViewersData = [
         { id: 1, name: "Subhagya Kishore", address: "xasbkjndab@1234skajdha",documents:["Adhar Card","Pan Card"],isSelected:false },
      { id: 2, name: "Rahul", address: "xasbkjndab@1234skajdha",documents:["Voter Id","Driving License"], isSelected :false}
@@ -15,7 +18,7 @@ import DocumentsShow from './DocumentsShow';
     const documentList=[
         "Aadhar Card", "Pan Card","Driving License","Voter ID"
     ]
-const Viewers = () => {
+const RevokePermission = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenDocuments, setIsOpenDocuments] = useState(false);
     const [isAllSelected, setIsAllSelected] = useState(false);
@@ -44,6 +47,7 @@ const Viewers = () => {
                 : item 
         ))
     }
+
     const listItems = documentList.map((item, index) =>
         <div className='docs' key={index}>
             <input className='doc-check' type='checkbox'/>
@@ -51,63 +55,59 @@ const Viewers = () => {
         </div>
   );
 
-    
-    return (
-    <div className='App-1'>
-      <div className='flex'> 
-                <h3 className='viewer-head'>Viewers:
-                    <Button className='add-viewer' type="button"
-                        onClick={handleShow}
-            >Add Viewer</Button>
-            <>
-            <Modal show={show}  centered onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Add Viewer</Modal.Title>
-        </Modal.Header>
-                <Modal.Body>
-                  <Form >
-        <div className='add-form'>
-                <Form.Group >
-                    <Form.Label >Enter Name</Form.Label>
-                    <Form.Control type="name" placeholder="Enter Name" />
-                </Form.Group>
-                <Form.Group >
-                    <Form.Label>Enter Wallet Address</Form.Label>
-                    <Form.Control type="address" placeholder="Enter Wallet Address" />
-          </Form.Group>
-          </div>
-            </Form>
-        </Modal.Body>
-        <Modal.Footer style={{
-          display: "flex",
-          justifyContent: "center",
-        }}>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Validate & Add
-          </Button>
-        </Modal.Footer>
-      </Modal>
-            </>
-                
-                </h3>
-            {/* Add Person */}
-            {isOpen && <Popup
-      content={<>
-        <Popupcontent/>
+    // const viewerList = allViewers && allViewers.map((Viewers) => (
         
-      </>}
-      handleClose={togglePopup}
-    />}
+    //     // <table>
+    //     //     <tr>
+    //     //         <th></th>
+    //     //         <th>Name </th>
+    //     //         <th>Wallet Address</th>
+    //     //     </tr>
+    //     //     <tr>
+    //     //         <td key={Viewers.id}>
+    //     //             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked = {Viewers.isSelected || isAllSelected} onChange={()=>handleSelection(Viewers.id)}></input>
+    //     //         </td>
+    //     //         {/* <td key={Viewers.id}>{Viewers.id}</td> */}
+    //     //         <td key={Viewers.id}>{ Viewers.name}</td>
+    //     //         <td key={Viewers.id}>{Viewers.address}</td>
+    //     //         <td key={Viewers.id}>
+    //     //             {/* <Button key={Viewers.id} onClick={() =>
+    //     //                 handleClickDocuments(Viewers.id)
+    //     //             }>Edit Access</Button>
+    //     //             {selectedId === Viewers.id && (
+    //     //                 <>
+    //     //                     <div className="select-option">
+    //     //                     <input type="radio" value="Aadhar Card" />
+    //     //                     <label for="html">Aadhar Card</label><br/>
+    //     //                         <input type="radio"  value="Pan Card" />
+    //     //                         <label for="css">Pan Card</label><br/>
+    //     //                             <input type="radio"  value="Voter ID" />
+    //     //                         <label for="javascript">Voter ID</label>
+    //     //                         <Button>Save</Button> */}
+    //     //                         {/* </div> */}
+    //     //                         {/* </>)} */}
+
+    //     //                     </td>
+    //     //                 </tr><br></br>
+    //     //    </table>
+        
+    // )
+    // )
+    return (
+      <div className='App-1'>
+        
+        <div className='flex'> 
+        
+                <h3 className='viewer-head'>Viewers:
+
+                </h3>
 
           <br></br>
             </div>
 
             <div>
                 <div className='select-all'>
-                <input type='checkbox' onClick={() => setIsAllSelected(!isAllSelected)} />
+                <input type='checkbox' className='docs checkbox-1' onClick={() => setIsAllSelected(!isAllSelected)} />
                     <h5 className='head-select'>Select All</h5>
                     </div>
                 {/* {viewerList} */}
@@ -146,9 +146,31 @@ const Viewers = () => {
         {listItems}
                       </div>
             </div>
-            <Button className='permission-btn'>Give Permission</Button>
+            <Button  className='revoke-btn' variant="danger" onClick={handleShow}>Revoke Access</Button>
+
+          <Modal
+        show={show}
+        onHide={handleClose}
+          backdrop="static"
+          centered
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Are you sure you want to remove ?</Modal.Title>
+        </Modal.Header>
+        
+        <Modal.Footer style={{
+          display: "flex",
+          justifyContent: "center",
+        }}>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>Remove</Button>
+        </Modal.Footer>
+      </Modal>
             </div>
   )
 }
 
-export default Viewers
+export default RevokePermission;

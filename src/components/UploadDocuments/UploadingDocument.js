@@ -8,9 +8,14 @@ import {AiFillFileImage} from 'react-icons/ai';
 const UploadingDocument = () => {
     const [image, setImage] = useState(null)
     const [fileName,setFileName]=useState("No selected file")
-  return (
-      <div className='uploadbody'>
-          <main>
+    return (<>
+        
+      
+        <div className='uploadbody'>
+          <div>
+                <main>
+                    <h3 className='headin-upload'>Upload Document (only jpeg) </h3>
+                    <div className='upload-box'>
               <form className='uploadform' action='' onClick={()=>document.querySelector(".input-field").click()}>
                   <input type="file" accept='pdf/*' className='input-field' hidden
                       onChange={({ target: { files } }) => {
@@ -42,9 +47,12 @@ const UploadingDocument = () => {
                       />
                   </span>
                   
-              </section>
-          </main>
-    </div>
+                        </section>
+                        </div>
+                </main>
+                </div>
+        </div>
+        </>
   )
 }
 

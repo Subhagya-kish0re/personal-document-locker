@@ -9,7 +9,7 @@ const Menu = () => {
           </div>
             <div className='title'>Personal Document Locker</div>
             <div className='nav-button'>
-                <Button variant="info">Sign up</Button>
+                {/* <Button variant="info">Sign up</Button> */}
             </div>
     </div>
     )

@@ -5,6 +5,7 @@ import RightSide from './Login Page/RightSide';
 import Menu from './Login Page/Menu';
 import LeftSideWithoutWallet from './Login Page/LeftSideWithoutWallet';
 import { Button, Alert, Row, Col } from "react-bootstrap";
+import DemoLogin from './Login Page/DemoLogin';
 
 
 const LoginPage = () => {
@@ -14,7 +15,10 @@ const LoginPage = () => {
       <Row className="landing">
         <Col>
           {/* <LeftSide /> */}
-          <LeftSideWithoutWallet/>
+          {/* <LeftSideWithoutWallet/> */}
+          <div>
+            <DemoLogin/>
+          </div>
         </Col>
 
         <Col>

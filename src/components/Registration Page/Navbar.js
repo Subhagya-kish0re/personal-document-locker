@@ -9,7 +9,7 @@ const Navbar = () => {
           </div>
             <div className='title'>Personal Document Locker</div>
             <div className='nav-button'>
-                <Button variant="info">Log In</Button>
+                {/* <Button variant="info">Log In</Button> */}
             </div>
     </div>
   )

@@ -1,7 +1,14 @@
 import React from 'react';
-import { Image ,Row,Col,Button} from "react-bootstrap";
+import { Image, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 
 const StartPage = () => {
+    
+    const navigate = useNavigate();
+    const handleClickLogIn = () => navigate('/login');
+    const handleClickSignUp = () => navigate('/register');
+    
+
   return (
       <div>
           <div className="landing">
@@ -12,8 +19,8 @@ const StartPage = () => {
                   <div className='leftbox'>
                           <p className='display-info'>Get your Documents Secured.</p>
                           <div className='flex'>
-                      <Button className='btn-hvr' variant="info">Upload a Document</Button>
-                              <Button className='btn-hvr' variant="secondary">See Your Documents</Button>
+                      <Button className='btn-hvr' variant="info" onClick={handleClickLogIn}>Log In</Button>
+                              <Button className='btn-hvr' variant="secondary" onClick={handleClickSignUp}>Sign Up</Button>
                               </div>
                   
           </div>

@@ -6,7 +6,7 @@ import SideBar from './HomePage/SideBar'
 
 const DocumentViewerPage = () => {
   return (
-      <div className='App'>
+      <div className='App-1'>
       {/* <div>DocumentViewerPage</div> */}
       <Navbar />
       <div className='flex'>

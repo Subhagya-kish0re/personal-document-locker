@@ -1,8 +1,12 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 const LeftSideWithoutWallet = () => {
+
+    const navigate = useNavigate();
+  const handleClick = () => navigate('/home');
+
   return (
       <div>
           <div className='leftdiv'>
@@ -18,11 +22,11 @@ const LeftSideWithoutWallet = () => {
                     <Form.Label className='login-button'>Enter your password</Form.Label>
                     <Form.Control className='login-button' type="password" placeholder="Enter your password" />
                 </Form.Group>
-                <Button className='login-button' type="submit" >Log In</Button>
+                <Button className='login-button' type="submit" onClick={handleClick} >Log In</Button>
                 {/* <h3>Address : {defaultAccount}</h3>
                 <h3>Balance : $ {userBalance}</h3> */}
                 
-            <p className='mt-3'>Don't Have an Account <span><Link to="/register">SignIn</Link></span> </p>
+            <p className='mt-3'>Don't Have an Account <span><Link to="/register">SignUp</Link></span> </p>
             </Form>
             
         </div>

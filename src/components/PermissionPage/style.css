@@ -65,11 +65,11 @@
     padding-top: 3vh;
 }
 .viewer-head{
-    padding: 8vh 0 3vh 3vw;
+    padding: 8vh 0 3vh 5vw;
 }
 /* Checkbox */
 table{
-    margin-top: 15vh;
+    margin-top: 5vh;
 }
 th{
     padding-left: 5vw;
@@ -108,7 +108,7 @@ button:active {
     box-shadow: none;
 }
 .add-viewer{
-    margin-left: 60vw;
+    margin-left: 50vw;
 }
 
 /* Popup style */
@@ -122,25 +122,27 @@ button:active {
 }
 
 .box {
-    position: relative;
-    width: 70%;
+    /* position: relative; */
+    width: 50vw;
     margin: 0 auto;
-    height: auto;
-    max-height: 70vh;
-    margin-top: calc(100vh - 85vh - 20px);
+    /* height: auto; */
+    height: 100vh;
+    margin-top: calc(130vh - 85vh - 20px);
     background: #fff;
     border-radius: 4px;
-    padding: 20px;
+    padding: 10px;
+    padding-left: 4vw;
     border: 1px solid #999;
     overflow: auto;
+    background-image: url("../assests/bgimg1.jpg");
 }
 
 .close-icon {
     content: 'x';
     cursor: pointer;
     position: fixed;
-    right: calc(15% - 30px);
-    top: calc(100vh - 85vh - 33px);
+    right: calc(25% - 18px);
+    top: calc(130vh - 85vh - 30px);
     background: #ededed;
     width: 25px;
     height: 25px;
@@ -149,4 +151,77 @@ button:active {
     text-align: center;
     border: 1px solid #999;
     font-size: 20px;
+}
+.btn-per{
+    margin-top: 10vh;
+}
+.select-all{
+    display: flex;
+    margin-left: 5vw;
+}
+.select-option{
+    align-content: center;
+}
+.radio{
+    color: black;
+}
+.doc-box{
+    outline: solid;
+    margin-left: 2vw;
+    align-items: left;
+    margin-top: 5vh;
+}
+.doc-check{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 1vh;
+}
+.permission-btn{
+    margin-top: 3vh;
+    /* margin-left: 5vw; */
+    align-items: center;
+    /* margin-bottom: 10vh; */
+    margin-left: 20vw;
+}
+.add-viwer{
+    padding-left: 6vw;
+    height: 10vh;
+    width: 40vw;
+    /* padding-left: 10vw; */
+}
+.validate-button{
+    margin-top: 5vh;
+    /* margin-left: 9vw; */
+}
+.document-whole-box{
+    /* margin-left: 5vw; */
+    width: 50vw;
+}
+.revoke-btn{
+    margin-top: 5vh;
+    margin-left: 15vw;
+}
+.docs{
+    align-items: flex-start;
+    /* margin-left: 2vw; */
+}
+/* .add-form{
+    padding-left: 8vw;
+} */
+.text{
+    margin-left: 5vw;
+}
+h5{
+    margin-left: 2vw;
+}
+.text-document{
+    margin-left: 5vw;
+    margin-top: 7vh;
+}
+.select-all-option{
+    /* padding-left: 10px; */
+    margin-left: 3vw;
+}
+.but-text{
+    margin-left: 2vw;
 }

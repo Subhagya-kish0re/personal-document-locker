@@ -1,21 +1,41 @@
 import React from 'react';
 import { Image ,Row,Col,Button} from "react-bootstrap";
-import img from "../components/assests/cyber-logo.jpg";
 import Navbar from './Registration Page/Navbar';
-// import AnimatedButton from 'react-animated-buttons';
+import { useNavigate } from 'react-router-dom';
+import './UploadDocuments/Style.css'
+import '../components/HomePage/home.css';
 
 const Welcome = () => {
+    const Username = "Test User";
+
+    const navigate = useNavigate();
+  const handleClickUpload = () => navigate('/upload');
+    const handleClickDocumentView = () => navigate("/views"); 
+  const handleClickPermission = () => navigate("/permission");
+  const handleClickRevokeAccess = () => navigate("/grantacces");
+    
     return (
-      <div>
+      <div className='App-1'>
           
-          <div >Welcome to Personal Document Locker !</div>
+            <div >
+                <h4 className='center'>Welcome {Username}</h4></div>
           <Row>
               <Col>
                   <div className='leftbox'>
-                      <p className='display-info'>Get your Documents Secured.</p>
-                      <Button className='btn' variant="info">Upload a Document</Button>
-                      <Button className='btn' variant="secondary">See Your Documents</Button>
-                  
+                  <p className='display-info'>Get your Documents Secured.</p>
+              <div className='buttons'>
+                
+                <div>
+              <Button className='btn-doc' variant="primary" onClick={handleClickUpload}>Upload a Document
+              </Button>
+                <Button className='btn-grant' variant='primary' onClick={handleClickPermission}>Grant Permission</Button>
+              </div>
+              <div>
+                <Button className='btn-doc' variant="primary" onClick={handleClickDocumentView}>See All Documents
+              </Button>
+                <Button className='btn-grant' variant='primary' onClick={handleClickRevokeAccess}>Revoke Permission</Button>
+                </div>
+                </div>
           </div>
               </Col>
               <Col>

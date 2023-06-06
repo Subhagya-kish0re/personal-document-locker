@@ -1,0 +1,10 @@
+.topbar{
+    background-color: rgb(10, 26, 108);
+    height: 12vh;
+}
+.text{
+    padding-left: 5vw;
+    padding-top: 3vh;
+    font-size: larger;
+    font-weight: bolder;
+}
